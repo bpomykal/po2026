@@ -56,9 +56,7 @@ public class CodingBat {
         }
         return map;
     }
-    public Map<String, Integer> wordCount(String[] strings) {
 
-    }
 
 
 
