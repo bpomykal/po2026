@@ -1,5 +1,8 @@
 package agh.po.lab3;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CodingBatTest {
@@ -29,5 +32,11 @@ class CodingBatTest {
         assertEquals(0,codingBat.diff21(21));
         assertEquals(58,codingBat.diff21(50));
         assertEquals(1,codingBat.diff21(20));
+    }
+    @org.junit.jupiter.api.Test
+    void mapAB2(){
+        assertEquals(Map.of("c", "cake"), codingBat.mapAB2(new HashMap<>(Map.of("a", "aaa", "b", "aaa", "c", "cake"))));
+        assertEquals(Map.of("a", "aaa", "b", "bbb"), codingBat.mapAB2(new HashMap<>(Map.of("a", "aaa", "b", "bbb"))));
+        assertEquals(Map.of("a", "aaa", "b", "bbb", "c", "aaa"), codingBat.mapAB2(new HashMap<>(Map.of("a", "aaa", "b", "bbb", "c", "aaa"))));
     }
 }

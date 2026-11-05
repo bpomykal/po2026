@@ -1,16 +1,16 @@
 package agh.po.lab3;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CodingBat {
     public static void main(String[] args) {
         CodingBat codingBat = new CodingBat();
         System.out.println(codingBat.helloName("Bob"));
-        int[] liczby = {1, 2, 2, 6, 99, 99, 7};
-        System.out.println(codingBat.sum67(liczby));
-        boolean wakacje = false;
-        boolean dzien = false;
-        System.out.println(codingBat.sleepIn(dzien, wakacje));
-        int n = 20;
-        System.out.println((codingBat.diff21(n)));
+        System.out.println(codingBat.sum67(new int[] {1, 2, 2, 6, 99, 99, 7}));
+        System.out.println(codingBat.sleepIn(false, false));
+        System.out.println((codingBat.diff21(20)));
+        System.out.println(codingBat.mapAB2(new HashMap<>(Map.of("a", "aaa", "b", "aaa", "c", "cake"))));
     }
     public String helloName(String name){
         return "Hello " + name +"!";
@@ -47,6 +47,17 @@ public class CodingBat {
         if(n==21) return 0;
         else if(n>21) return 2*(n-21);
         else return Math.abs(n-21);
+    }
+    public Map<String, String> mapAB2(Map<String, String> map) {
+        boolean w1 = false;
+        if(map.containsKey("a") && map.containsKey("b") && map.get("a").equals(map.get("b"))) {
+            map.remove("a");
+            map.remove("b");
+        }
+        return map;
+    }
+    public Map<String, Integer> wordCount(String[] strings) {
+
     }
 
 
