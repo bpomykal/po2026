@@ -11,6 +11,7 @@ public class CodingBat {
         System.out.println(codingBat.sleepIn(false, false));
         System.out.println((codingBat.diff21(20)));
         System.out.println(codingBat.mapAB2(new HashMap<>(Map.of("a", "aaa", "b", "aaa", "c", "cake"))));
+        System.out.println(codingBat.wordCount((new String[] {"a", "b", "a", "c", "b"})));
     }
     public String helloName(String name){
         return "Hello " + name +"!";
@@ -56,7 +57,18 @@ public class CodingBat {
         }
         return map;
     }
-
+    public Map<String, Integer> wordCount(String[] strings) {
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        for(String string : strings){
+            if(map.containsKey(string)) {
+                map.put(string, map.get(string) + 1);
+            }
+            else{
+                map.put(string, 1);
+            }
+        }
+        return map;
+    }
 
 
 
