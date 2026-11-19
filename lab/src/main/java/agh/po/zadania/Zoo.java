@@ -8,22 +8,40 @@ import agh.po.animals.Snake;
 import java.util.Random;
 
 public class Zoo {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Animal[] animals = new Animal[100];
         Random r = new Random();
-        for(int i = 0; i<100; i++){
+        for (int i = 0; i < 100; i++) {
             int num = r.nextInt(3);
-            switch (num){
-                case 0: animals[i] = new Dog(); break;
-                case 1: animals[i] = new Parrot(); break;
-                case 2: animals[i] = new Snake(); break;
+            switch (num) {
+                case 0:
+                    animals[i] = new Dog();
+                    break;
+                case 1:
+                    animals[i] = new Parrot();
+                    break;
+                case 2:
+                    animals[i] = new Snake();
+                    break;
             }
-            int sum = 0;
-            for(Animal animal: animals){
-                sum = sum + animal.getLegs();
-                animal.getDescription();
-            }
-
         }
+        int totalLegs = countLegs(animals);
+        System.out.println("Suma nóg wszystkich zwierząt: " + totalLegs);
+
+        for (Animal animal : animals) {
+            int legs = animal.getLegs();
+            String desc = animal.getDescription();
+            System.out.println(desc);
+            animal.makeSound();
+        }
+    }
+
+    public static int countLegs(Animal[] animals) {
+        int sum = 0;
+        for (Animal animal : animals) {
+            sum += animal.getLegs();
+        }
+        return sum;
     }
 }

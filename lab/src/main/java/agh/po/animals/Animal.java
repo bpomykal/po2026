@@ -5,5 +5,10 @@ public abstract class Animal {
     int legs;
 
     public abstract String getDescription();
-    public int getLegs() {return legs;}
+
+    public int getLegs() {
+        return legs;
+    }
+
+    public abstract void makeSound();
 }
