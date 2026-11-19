@@ -1,0 +1,17 @@
+package agh.po.symulator;
+
+public class SkrzyniaBiegow extends Komponent{
+    int aktualnyBieg;
+    int iloscBiegow; // wszystkie biegi od 1 do n + wsteczny
+
+    public void zwiekszBieg(){
+        if(aktualnyBieg < iloscBiegow ){
+            aktualnyBieg++;
+        }
+    }
+    public void zmniejszBieg(){
+        if(aktualnyBieg > 0){
+            aktualnyBieg--;
+        }
+    }
+}
