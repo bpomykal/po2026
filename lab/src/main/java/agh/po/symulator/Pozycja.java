@@ -1,15 +1,19 @@
 package agh.po.symulator;
 
 public class Pozycja {
-    Double x;
-    Double y;
+    double x;
+    double y;
 
-    public void aktualizujPozycje(Double deltaX, Double deltaY){
+    public Pozycja(double x, double y){
+        this.x = x;
+        this.y = y;
+    }
+
+    public void aktualizujPozycje(double deltaX, double deltaY){
         x = deltaX;
         y = deltaY;
     }
-    public record Point(Double x, Double y){};
-    public Point getPozycja(){
-        return new Point(x, y);
+    public String getPozycja(){
+        return "(" + x + ", " + y + ")";
     }
 }

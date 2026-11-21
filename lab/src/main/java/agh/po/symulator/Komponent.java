@@ -1,12 +1,18 @@
 package agh.po.symulator;
 
 public abstract  class Komponent {
-    String pozycja;
+    String producent;
     String model;
 
-    public String getPozycja(){
-        return pozycja;
+    public Komponent(String producent, String model){
+        this.producent = producent;
+        this.model = model;
     }
+
+    public String getProducent(){
+        return producent;
+    }
+
     public String getModel() {
         return model;
     }
